@@ -19,6 +19,7 @@
 #define DEBUG 0
 
 #include <cutils/log.h>
+#include <cutils/properties.h>
 
 #include <stdint.h>
 #include <string.h>
@@ -299,6 +300,8 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     else if (!strcmp(LIGHT_ID_ATTENTION, name))
         set_light = set_light_attention;
     else if (!strcmp(LIGHT_ID_BATTERY, name))
+        if (property_get_bool("persist.lights.on_charger", true))
+            return -EINVAL;
         set_light = set_light_battery;
     else
         return -EINVAL;
