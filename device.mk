@@ -410,6 +410,10 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/qcom/gpu/msm8x74/msm8x74-gpu-vendor.mk)
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
 
+# Privileged permission whitelisting
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/privapp-permissions-cosmicos.xml:system/etc/permissions/privapp-permissions-cosmicos.xml
+
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2016-10-05
