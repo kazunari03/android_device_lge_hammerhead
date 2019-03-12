@@ -409,6 +409,12 @@ PRODUCT_COPY_FILES += \
     device/lge/hammerhead/init.hammerhead.diag.rc.user:root/init.hammerhead.diag.rc
 endif
 
+# Enable boot-time adb
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
+    
 # setup dalvik vm configs.
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
 
