@@ -148,12 +148,14 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libstagefrighthw \
+    libOmxAacEnc \
+    libOmxAmrEnc \
     libOmxCore \
-    libmm-omxcore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
     libOmxVdec \
-    libOmxVdecHevc \
-    libOmxVenc
+    libOmxVenc \
+    libstagefrighthw
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
