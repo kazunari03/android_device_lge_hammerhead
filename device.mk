@@ -393,3 +393,7 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2016-10-05
+		
+#Build trust hal
+PRODUCT_PACKAGES += \
+ 		vendor.lineage.trust@1.0-service
