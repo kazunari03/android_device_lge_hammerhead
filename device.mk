@@ -399,3 +399,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 #Build trust hal
 PRODUCT_PACKAGES += \
  		vendor.lineage.trust@1.0-service
+
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.qti.am.reschedule_service=true \
+    ro.vendor.qti.sys.fw.bservice_enable=true
